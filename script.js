@@ -13,15 +13,20 @@ let time;
 let id = 0;
 let clicked = false;
 
+// function beep() {
+//     let context = new AudioContext();
+//     let oscillator = context.createOscillator();
+//     oscillator.type = "sine";
+//     oscillator.frequency.value = 800;
+//     oscillator.connect(context.destination);
+//     oscillator.start();
+//     setTimeout(function () {
+//         oscillator.stop();
+//     }, 100);
+// }
 
-function showScore(id){
-    ++killedBubbles;
-    document.querySelectorAll(`.bubble`).forEach((el) => {
-        if(id === el.getAttribute('data-id')){
-            el.style.display = 'none'
-        }
-    })
-}
+
+let audio = new Audio('bubble.wav');
 
 function intervalFun(gameMood){
     time = setInterval(() => {
@@ -37,6 +42,11 @@ function intervalFun(gameMood){
             </div>
         `
         score.innerText = `${killedBubbles}`;
+
+        if(document.querySelectorAll(`.bubble`).length >= 30){
+            clearInterval(time);
+            alert("Game Over :| ");
+        }
     }, gameMood)
 }
 
@@ -78,3 +88,15 @@ hard.addEventListener('click', function(){
         intervalFun(1000);
     }
 })
+
+function showScore(id){
+    audio.pause();
+    audio.currentTime = 0;
+    ++killedBubbles;
+    document.querySelectorAll(`.bubble`).forEach((el) => {
+        if(id === el.getAttribute('data-id')){
+            audio.play();
+            el.remove();
+        }
+    })
+}
