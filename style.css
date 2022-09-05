@@ -1,0 +1,14 @@
+.bubble-box{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border: 1px solid green;
+}
+
+.bubble{
+    position: absolute;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border: 1px solid skyblue;
+}
