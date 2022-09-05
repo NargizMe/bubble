@@ -1,3 +1,11 @@
+.container{
+    display: flex;
+}
+.bubble-button-container{
+    display: flex;
+    flex-direction: column;
+    margin: 0 31px;
+}
 .bubble-box{
     position: relative;
     width: 300px;
@@ -11,4 +19,59 @@
     width: 40px;
     height: 40px;
     border: 1px solid skyblue;
+}
+
+.score{
+    border: 1px solid green;
+    font-size: 20px;
+    font-weight: bold;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+p{
+    margin: 0;
+    text-align: center;
+}
+
+button{
+    border: none;
+    padding: 13px 31px;
+    margin: 10px 0;
+    color: white;
+    font-weight: bold;
+}
+
+.start, .stop{
+    background-color: gray;
+    border: 1px solid aqua;
+}
+
+.easy{
+    background-color: pink;
+    color: black;
+    border-radius: 50%;
+    padding: 13px 13px;
+    width: 40px;
+    height: 40px;
+}
+
+.medium{
+    background-color: purple;
+    border-radius: 50%;
+    padding: 13px 13px;
+    width: 40px;
+    height: 40px;
+}
+
+.hard{
+    background-color: blue;
+    border-radius: 50%;
+    padding: 13px 13px;
+    width: 40px;
+    height: 40px;
 }
