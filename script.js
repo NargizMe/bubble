@@ -12,20 +12,6 @@ let killedBubbles = 0;
 let time;
 let id = 0;
 let clicked = false;
-
-// function beep() {
-//     let context = new AudioContext();
-//     let oscillator = context.createOscillator();
-//     oscillator.type = "sine";
-//     oscillator.frequency.value = 800;
-//     oscillator.connect(context.destination);
-//     oscillator.start();
-//     setTimeout(function () {
-//         oscillator.stop();
-//     }, 100);
-// }
-
-
 let audio = new Audio('bubble.wav');
 
 function intervalFun(gameMood){
